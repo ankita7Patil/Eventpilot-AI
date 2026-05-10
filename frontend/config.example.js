@@ -1,0 +1,1 @@
+window.EVENTPILOT_API_URL = "https://your-render-service.onrender.com";

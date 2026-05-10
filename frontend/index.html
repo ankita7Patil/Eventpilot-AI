@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+  // Auth guard - agar login nahi kiya to login page pe bhejo
+  if (!localStorage.getItem("EP_USER_NAME")) {
+    window.location.href = "login.html";
+     }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EventPilot AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">EP</div>
+          <div>
+            <p class="eyebrow">Opportunity agent</p>
+            <h1>EventPilot AI</h1>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Primary navigation">
+          <a href="#briefing" class="active">Briefing</a>
+          <a href="#agents">Agents</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#strategy">Strategy</a>
+        </nav>
+
+        <section class="side-panel">
+          <p class="panel-label">Demo line</p>
+          <h2>AI that remembers opportunities for you.</h2>
+          <p>Tracks hackathons, internships, fellowships, contests, bootcamps, and events before deadlines slip away.</p>
+        </section>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Autonomous event intelligence</p>
+            <h2>Research, decide, remind, execute.</h2>
+          </div>
+          <button id="refreshWorkflowBtn" class="ghost-button" type="button">Refresh workflow</button>
+        </header>
+
+        <section class="hero" id="briefing">
+          <div class="hero-copy">
+            <p class="status-pill">Live MVP for Bot-a-thon</p>
+            <h2>Paste any event link. EventPilot turns it into deadlines, reminders, and a winning plan.</h2>
+            <p>
+              Designed for students and builders who register everywhere, then miss the one update that matters.
+            </p>
+          </div>
+
+          <form id="eventForm" class="link-card">
+            <label for="eventUrl">Add event link</label>
+            <div class="input-row">
+              <input id="eventUrl" name="eventUrl" type="url" placeholder="https://devfolio.co/... or https://luma.com/..." />
+              <button id="analyzeButton" type="submit">Analyze</button>
+            </div>
+            <p class="hint">Paste a public event URL. The backend scraper and agents will generate the briefing from real page content.</p>
+          </form>
+        </section>
+
+        <section class="metrics-grid" aria-label="Opportunity metrics">
+          <article>
+            <span id="eventCount">0</span>
+            <p>Tracked event</p>
+          </article>
+          <article>
+            <span id="urgentCount">0</span>
+            <p>Priority actions</p>
+          </article>
+          <article>
+            <span id="agentCount">5</span>
+            <p>Active agents</p>
+          </article>
+          <article>
+            <span id="deadlineClock">Calculating</span>
+            <p>Until submission</p>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="briefing-card wide-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">AI briefing</p>
+                <h3 id="eventTitle">No event analyzed yet</h3>
+              </div>
+              <span id="urgencyBadge" class="urgency high">Waiting</span>
+            </div>
+            <p id="eventSummary" class="summary-text">
+              Paste an event link to run the real autonomous workflow.
+            </p>
+            <div id="briefingList" class="briefing-list"></div>
+          </article>
+
+          <article class="briefing-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Next best action</p>
+                <h3>Build for the tracks</h3>
+              </div>
+            </div>
+            <div id="nextAction" class="next-action"></div>
+          </article>
+        </section>
+
+        <section class="content-grid" id="agents">
+          <article class="briefing-card wide-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Agent network</p>
+                <h3>Autonomous workflow</h3>
+              </div>
+              <span class="status-pill compact">Live workflow</span>
+            </div>
+            <div id="agentGrid" class="agent-grid"></div>
+          </article>
+
+          <article class="briefing-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Activity feed</p>
+                <h3>What AI did</h3>
+              </div>
+            </div>
+            <div id="activityFeed" class="activity-feed"></div>
+          </article>
+        </section>
+
+        <section class="content-grid" id="timeline">
+          <article class="briefing-card wide-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Smart reminders</p>
+                <h3>Timeline</h3>
+              </div>
+            </div>
+            <div id="timelineList" class="timeline"></div>
+          </article>
+
+          <article class="briefing-card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Chat agent</p>
+                <h3>Ask EventPilot</h3>
+              </div>
+            </div>
+            <div id="chatLog" class="chat-log"></div>
+            <form id="chatForm" class="chat-form">
+              <input id="chatInput" type="text" placeholder="What should I prepare?" />
+              <button type="submit">Ask</button>
+            </form>
+          </article>
+        </section>
+
+        <section class="briefing-card full-width" id="strategy">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Strategy agent</p>
+              <h3>Recommended winning plan</h3>
+            </div>
+          </div>
+          <div id="strategyGrid" class="strategy-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
