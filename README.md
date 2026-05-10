@@ -8,7 +8,7 @@
 
 **[🚀 Live Demo](https://eventpilot-ai.vercel.app)** · **[📹 Demo Video](#)** · **[🐙 GitHub](https://github.com/ankita7Patil/Eventpilot-AI)**
 
-![EventPilot AI Dashboard](assets/demo.png)
+![EventPilot AI Dashboard](Screenshot 2026-05-10 155703.png)
 
 </div>
 
