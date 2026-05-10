@@ -64,7 +64,7 @@ function scheduleDeadlineAlerts(event) {
 const API_BASE =
   window.EVENTPILOT_API_URL ||
   localStorage.getItem("EVENTPILOT_API_URL") ||
-  "http://127.0.0.1:8000";
+  "https://eventpilot-ai.onrender.com";
 
 const AGENT_DEFINITIONS = [
   ["Monitor Agent", "Scrapes event pages and detects current opportunity signals."],
