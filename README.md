@@ -6,7 +6,7 @@
 
 <div align="center">
 
-**[🚀 Live Demo](https://eventpilot-ai.vercel.app)** · **[📹 Demo Video][(https://drive.google.com/file/d/1lJzg6dcAHVQjD8gogsAcr180zPMcQ4kJ/view?usp=drive_link)** · **[🐙 GitHub](https://github.com/ankita7Patil/Eventpilot-AI)**
+**[🚀 Live Demo](https://eventpilot-ai.vercel.app)** **[Demo Video][(https://drive.google.com/file/d/1lJzg6dcAHVQjD8gogsAcr180zPMcQ4kJ/view?usp=drive_link)** · **[🐙GitHub](https://github.com/ankita7Patil/Eventpilot-AI)**
 
 ![EventPilot AI Dashboard](./dashboard.png)
 
